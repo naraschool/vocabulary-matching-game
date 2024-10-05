@@ -7,13 +7,13 @@
     --container-background: #ffffff;
     --text-color: #333;
     --border-color: #ffccd5;
-    --button-background: linear-gradient(45deg, #ffdfd9, #d9d4ff); /* Updated pastel shades */
+    --button-background: linear-gradient(45deg, #ffdfd9, #d9d4ff);
     --button-text-color: #333;
     --input-background: #fafafa;
     --shadow-color: rgba(200, 200, 200, 0.5);
-    --correct-bg-color: #a8e6cf; /* Pastel green */
-    --incorrect-bg-color: #ff8b94; /* Pastel red */
-    --timer-color: #a8e6cf; /* Pastel green for the timer */
+    --correct-bg-color: #a8e6cf;
+    --incorrect-bg-color: #ff8b94;
+    --timer-color: #a8e6cf;
 }
 
 .dark-theme {
@@ -21,13 +21,12 @@
     --container-background: #2a2a3b;
     --text-color: #ffffff;
     --border-color: #c4e0ff;
-    --button-background: linear-gradient(45deg, #c4e0ff, #a8e6cf); /* Updated pastel shades */
+    --button-background: linear-gradient(45deg, #c4e0ff, #a8e6cf);
     --button-text-color: #ffffff;
     --input-background: #2f2f42;
     --shadow-color: rgba(0, 0, 0, 0.5);
-    --timer-color: #c4e0ff; /* Light pastel blue for the timer in dark mode */
+    --timer-color: #c4e0ff;
 }
-
 
 /* Apply Theme Variables */
 body {
@@ -49,8 +48,8 @@ body {
     top: 20px;
     right: 20px;
     padding: 5px 15px;
-    background: var(--button-background); /* Use pastel button background */
-    color: #333;
+    background: var(--button-background);
+    color: var(--button-text-color);
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -92,12 +91,17 @@ h2 {
 .input-form {
     margin-bottom: 40px;
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px;
     border: 2px solid var(--border-color);
     padding: 20px;
     background: rgba(240, 240, 255, 0.7);
     border-radius: 15px;
+}
+
+.input-form h2, .input-form textarea {
+    flex: 1; /* Allow inputs and headers to take equal space */
+    min-width: 150px; /* Minimum width to ensure readability */
 }
 
 /* Game Area */
@@ -107,18 +111,21 @@ h2 {
 
 .columns {
     display: flex;
-    gap: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .column {
-    width: 45%;
+    flex: 1;
+    min-width: 150px;
+    max-width: 45%;
     padding: 20px;
-    font-family: 'Press Start 2P', cursive; /* Larger pixelated font */
-    font-size: 1.2em;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1em;
     background-color: var(--container-background);
     border-radius: 10px;
     box-shadow: 0 0 10px var(--shadow-color);
-    transition: background-color 0.3s ease; /* Transition for background color change */
+    transition: background-color 0.3s ease;
 }
 
 .word {
@@ -143,7 +150,7 @@ h2 {
 #timer-display {
     margin-top: 30px;
     font-size: 1.2em;
-    color: var(--timer-color); /* Use pastel color for the timer */
+    color: var(--timer-color);
 }
 
 /* Game Over / Win Message */
@@ -158,20 +165,60 @@ h2 {
     color: var(--text-color);
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
 
-::-webkit-scrollbar-track {
-    background: var(--background-color);
-}
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
 
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #ffccd5, #d4b5ff);
-    border-radius: 10px;
-}
+    #theme-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
 
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(45deg, #d4b5ff, #ffccd5);
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.1em;
+    }
+
+    .input-form {
+        flex-direction: column; /* Stack input fields vertically on small screens */
+    }
+
+    .columns {
+        flex-direction: row; /* Keep columns side-by-side */
+    }
+
+    .column {
+        flex: 1;
+        min-width: 45%;
+        font-size: 0.9em;
+        padding: 15px;
+    }
+
+    .word {
+        font-size: 1em;
+    }
+
+    #score {
+        font-size: 1.2em;
+    }
+
+    #timer-display {
+        font-size: 1em;
+    }
+
+    #final-message {
+        font-size: 1.8em;
+    }
 }
