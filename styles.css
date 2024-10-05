@@ -78,6 +78,8 @@ h1 {
     text-align: center;
     font-family: 'Press Start 2P', cursive;
     text-shadow: 1px 1px 0px #c4e0ff;
+    word-wrap: break-word; /* Ensure text wraps within its container */
+    overflow: hidden;
 }
 
 h2 {
@@ -85,8 +87,67 @@ h2 {
     margin-bottom: 10px;
     font-family: 'Nunito', sans-serif;
     color: var(--text-color);
+    word-wrap: break-word; /* Ensure text wraps within its container */
+    overflow: hidden;
 }
 
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    #theme-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    /* Reduce font sizes for smaller screens */
+    h1 {
+        font-size: 1.5em; /* Smaller font size for main title */
+    }
+
+    h2 {
+        font-size: 1em; /* Smaller font size for subheaders */
+    }
+
+    .input-form {
+        flex-direction: column; /* Stack input fields vertically on small screens */
+    }
+
+    .columns {
+        flex-direction: row; /* Keep columns side-by-side */
+    }
+
+    .column {
+        flex: 1;
+        min-width: 45%;
+        font-size: 0.9em;
+        padding: 15px;
+    }
+
+    .word {
+        font-size: 1em;
+    }
+
+    #score {
+        font-size: 1.2em;
+    }
+
+    #timer-display {
+        font-size: 1em;
+    }
+
+    #final-message {
+        font-size: 1.8em;
+    }
+}
 /* Input Form */
 .input-form {
     margin-bottom: 40px;
