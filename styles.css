@@ -1,0 +1,177 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Press+Start+2P&display=swap');
+
+/* Theme Variables */
+:root {
+    --background-color: #f0f4ff;
+    --container-background: #ffffff;
+    --text-color: #333;
+    --border-color: #ffccd5;
+    --button-background: linear-gradient(45deg, #ffdfd9, #d9d4ff); /* Updated pastel shades */
+    --button-text-color: #333;
+    --input-background: #fafafa;
+    --shadow-color: rgba(200, 200, 200, 0.5);
+    --correct-bg-color: #a8e6cf; /* Pastel green */
+    --incorrect-bg-color: #ff8b94; /* Pastel red */
+    --timer-color: #a8e6cf; /* Pastel green for the timer */
+}
+
+.dark-theme {
+    --background-color: #1f1f2e;
+    --container-background: #2a2a3b;
+    --text-color: #ffffff;
+    --border-color: #c4e0ff;
+    --button-background: linear-gradient(45deg, #c4e0ff, #a8e6cf); /* Updated pastel shades */
+    --button-text-color: #ffffff;
+    --input-background: #2f2f42;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --timer-color: #c4e0ff; /* Light pastel blue for the timer in dark mode */
+}
+
+
+/* Apply Theme Variables */
+body {
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 40px;
+    color: var(--text-color);
+    position: relative;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 15px;
+    background: var(--button-background); /* Use pastel button background */
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    box-shadow: 0 0 5px var(--shadow-color);
+    font-size: 0.9em;
+}
+
+/* Main Container */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    background: var(--container-background);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 0 15px var(--shadow-color);
+    position: relative;
+}
+
+/* Headers */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 1px 1px 0px #c4e0ff;
+}
+
+h2 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-color);
+}
+
+/* Input Form */
+.input-form {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    border: 2px solid var(--border-color);
+    padding: 20px;
+    background: rgba(240, 240, 255, 0.7);
+    border-radius: 15px;
+}
+
+/* Game Area */
+#game-area {
+    margin-top: 40px;
+}
+
+.columns {
+    display: flex;
+    gap: 30px;
+}
+
+.column {
+    width: 45%;
+    padding: 20px;
+    font-family: 'Press Start 2P', cursive; /* Larger pixelated font */
+    font-size: 1.2em;
+    background-color: var(--container-background);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--shadow-color);
+    transition: background-color 0.3s ease; /* Transition for background color change */
+}
+
+.word {
+    padding: 12px;
+    background: var(--input-background);
+    margin-bottom: 12px;
+    cursor: grab;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.2em;
+}
+
+/* Score and Timer */
+#score {
+    margin-top: 30px;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#timer-display {
+    margin-top: 30px;
+    font-size: 1.2em;
+    color: var(--timer-color); /* Use pastel color for the timer */
+}
+
+/* Game Over / Win Message */
+#game-over {
+    margin-top: 40px;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#final-message {
+    font-size: 2em;
+    color: var(--text-color);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ffccd5, #d4b5ff);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #d4b5ff, #ffccd5);
+}

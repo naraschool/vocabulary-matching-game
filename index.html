@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Matching Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle">Switch to Dark Theme</button>
+
+    <div class="container">
+        <h1>Vocabulary Matching Game</h1>
+
+        <!-- Input Area for Word Lists -->
+        <div id="input-area" class="input-form">
+            <h2>Language 1</h2>
+            <textarea id="english-words" placeholder="Enter words, one per line"></textarea>
+
+            <h2>Language 2</h2>
+            <textarea id="korean-words" placeholder="Enter words, one per line"></textarea>
+
+            <button id="generate-game">Generate Matching Game</button>
+        </div>
+
+        <!-- Game Area for Matching Game -->
+        <div id="game-area" style="display: none;">
+            <h2>Matching Game</h2>
+            <div class="columns">
+                <div id="column1" class="column"></div>
+                <div id="column2" class="column"></div>
+            </div>
+        </div>
+
+        <!-- Timer Display -->
+        <div id="timer-display" style="display: none;">Time Left: <span id="time-left">0:00</span></div>
+
+        <!-- Score Display -->
+        <div id="score">Score: 0</div>
+
+        <!-- End Game Message -->
+        <div id="game-over" style="display: none;">
+            <h2 id="final-message">GAME OVER</h2>
+            <p>Your final score: <span id="final-score">0</span></p>
+            <p>Correct answers percentage: <span id="correct-percentage">0</span>%</p>
+            <p id="time-taken">Time taken: 0:00</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
